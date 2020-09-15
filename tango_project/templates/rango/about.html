@@ -1,0 +1,27 @@
+{% extends 'rango/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    About
+{% endblock %}
+
+{% block body_block %}
+    <h1>This page is about Rango...</h1>
+    <h2>This tutorial has been put together by Denis</h2>
+    <div>
+        hey there partner!<br />
+        <strong>{{aboutmessage}}</strong><br />
+        <p>Количество посещений: {{number_of_visits}}, последнее посещение было: {{date_of_last_visit}}</p>
+    </div>
+    <div>
+        <img src="{{ MEDIA_URL }}forest.jpg" alt="Pictures of forest" />
+    </div>
+    <button class="btn btn-primary" onclick="alert('Вы нажали кнопку, используя JavaScript')">
+        Нажми меня - я запускаю JavaScript
+    </button>
+    <button class="btn btn-primary" id="about-btn">
+        Нажми на меня, я JavaScript на скорости
+    </button>
+<p class="tek">Это пример</p>
+<p class="tek">Это ещё один пример</p>
+{% endblock%}

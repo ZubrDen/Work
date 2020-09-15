@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load rango_template_tags %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Rango -
+        {% block title_block %}
+            How to Tango with Django!
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <div>
+        {% block body_block %}
+        {% endblock %}
+    </div>
+    <hr />
+    <div>
+        <h3>Это будет боковая панель</h3>
+        {% block sidebar_block %}
+            {% get_category_list category %}  <!-- параметр category берётся из contex_dict функции show_category-->
+        {% endblock %}                        <!--  в views.py-->
+    </div>
+    <hr />
+    <div>
+        <ul>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'rango:restricted' %}">Restricted Page</a></li>
+            <li><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
+            <li><a href="{% url 'auth_password_change' %}">Change Password</a></li>
+            <li><a href="{% url 'rango:add_category' %}">Add New Category</a></li>
+        {% else %}
+            <li><a href="{% url 'auth_login' %}">Login</a></li>
+            <li><a href="{% url 'registration_register' %}">Sign Up</a></li>
+        {% endif %}
+            <li><a href="{% url 'rango:about' %}">About</a></li>
+            <li><a href="{% url 'rango:index' %}">Index</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

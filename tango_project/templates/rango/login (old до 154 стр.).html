@@ -1,0 +1,21 @@
+{% extends 'rango/base.html'%}
+{% load static %}
+
+{% block title_block %}
+    Login
+{% endblock %}
+
+{% block body_block %}
+<link href="http://v4-alpha.getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+<div class="jumbotron">
+    <h1 class="display-3">Login</h1>
+</div>
+<form id="login_form" method="post" action="{% url 'rango:login' %}">
+    {% csrf_token %}
+    Username: <input type="text" name="username" value="" size="50" />
+    <br />
+    Password: <input type="password" name="password" value="" size="50" />
+    <br />
+    <input type="submit" value="submit" />
+</form>
+{% endblock %}
