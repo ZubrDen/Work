@@ -25,9 +25,9 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'f6we_)q0koidks8+9u@0ybl^!lh5js17062yd=04se7x36=3aq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['denzubr.pythonanywhere.com']
+ALLOWED_HOSTS = ['denzubr.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
