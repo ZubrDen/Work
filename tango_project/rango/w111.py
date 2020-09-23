@@ -3,7 +3,7 @@ import urllib.parse
 import urllib.request
 
 def hel():
-    print('ПРИВЕТ')
+    print('ПРИВЕТ для GIT')
 
 # Start execution here!
 if __name__ == '__main__':
